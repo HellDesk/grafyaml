@@ -23,7 +23,7 @@ class Row(object):
         row = {
             v.Required('collapse', default=False): v.All(bool),
             v.Required('editable', default=True): v.All(bool),
-            v.Required('height'): v.All(str),
+            v.Optional('height'): v.All(str),
             v.Required('showTitle', default=False): v.All(bool),
             v.Required('title'): v.All(str, v.Length(min=1)),
         }

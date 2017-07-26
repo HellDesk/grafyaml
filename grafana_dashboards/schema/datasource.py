@@ -22,7 +22,7 @@ class Datasource(object):
             v.Required('access', default='direct'): v.Any('direct', 'proxy'),
             v.Required('isDefault', default=False): v.All(bool),
             v.Required('name'): v.All(str, v.Length(min=1)),
-            v.Required('type', default='graphite'): v.Any('graphite'),
+            v.Required('type', default='prometheus'): v.Any('graphite','prometheus','elasticsearch','influxdb','opentsdb','cloudwatch'),
             v.Required('url'): v.All(str, v.Length(min=1)),
             v.Optional('orgId'): int,
         }

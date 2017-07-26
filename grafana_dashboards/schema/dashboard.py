@@ -24,6 +24,8 @@ class Dashboard(object):
         dashboard = {
             v.Required('timezone', default='utc'): v.Any('browser', 'utc'),
             v.Required('title'): v.All(str, v.Length(min=1)),
+            v.Optional('time'): v.All(dict),
+            v.Optional('timepicker'): v.All(dict),
             v.Optional('id'): int,
         }
         rows = Row().get_schema()

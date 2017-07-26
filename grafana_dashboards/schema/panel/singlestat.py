@@ -63,8 +63,10 @@ class Singlestat(Base):
             v.Required('valueName', default='avg'): v.Any(
                 'avg', 'current', 'max', 'min', 'total'),
             v.Optional('decimals'): v.All(int, v.Range(min=0, max=12)),
+            v.Optional('datasource'): v.All(str),
             v.Optional('hideTimeOverride'): v.All(bool),
             v.Optional('timeFrom'): v.All(v.Match(r'[1-9]+[0-9]*[smhdw]')),
+            v.Optional('format'): v.All(str),
             v.Optional('timeShift'): v.All(v.Match(r'[1-9]+[0-9]*[smhdw]')),
         }
         singlestat.update(self.base)
